@@ -4,6 +4,10 @@ export default {
   content: ['./index.html', './client/**/*.tsx'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Libre Bodoni', 'serif'],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
