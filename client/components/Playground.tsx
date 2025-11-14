@@ -36,6 +36,8 @@ export default function ComponentPlayground() {
         - hover:underline for underline highlight of link
         - px / py is padding for sides / top & bottom
         - hover:bg ... /80 sets opacity of 80% for bg when hovering over button
+        - grid sets container as grid
+        - sm:grid-cols-2 / lg:grid-cols-3 means small screen 2 columns / large 3
       
       */}
 
@@ -215,18 +217,122 @@ export default function ComponentPlayground() {
       <Separator />
 
       {/* ------------------------------------- */}
+      {/* ICON CARD */}
+      {/* ------------------------------------- */}
+
+      <section>
+        <h2 className="mb-4 font-serif text-2xl">Icon Card</h2>
+        <p>
+          * These are for individual use. There is a group (column) graphic in
+          public/assets/images
+        </p>
+        <div className="grid gap-6 pt-12 sm:grid-cols-2 lg:grid-cols-3">
+          {/* BLUE */}
+          <Card className="bg-email-blue border-email-charcoal flex h-20 w-64 items-center justify-center border p-4">
+            <CardHeader>
+              <CardTitle>icon graphic here</CardTitle>
+            </CardHeader>
+          </Card>
+
+          {/* MAUVE */}
+          <Card className="bg-email-mauve border-email-charcoal flex h-20 w-64 items-center justify-center border p-4">
+            <CardHeader>
+              <CardTitle>icon graphic here</CardTitle>
+            </CardHeader>
+          </Card>
+
+          {/* GOLD */}
+          <Card className="bg-email-gold border-email-charcoal flex h-20 w-64 items-center justify-center border p-4">
+            <CardHeader>
+              <CardTitle>icon graphic here</CardTitle>
+            </CardHeader>
+          </Card>
+
+          {/* MINT */}
+          <Card className="bg-email-mint border-email-charcoal flex h-20 w-64 items-center justify-center border p-4">
+            <CardHeader>
+              <CardTitle>icon graphic here</CardTitle>
+            </CardHeader>
+          </Card>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* ------------------------------------- */}
       {/* CARD */}
       {/* ------------------------------------- */}
 
       <section>
         <h2 className="mb-4 font-serif text-2xl">Card</h2>
+        <div className="space-y-6">
+          {/* PROMPT */}
+          <Card className="max-w-xl">
+            <CardHeader className="pl-3 pt-2 font-serif">
+              <CardTitle>Prompt:</CardTitle>
+            </CardHeader>
+            <CardContent className="font-style: pb-3 pl-3 pt-2 font-serif text-xl italic">
+              Write an email to your colleague Jamie. Congratulate them on
+              completing a challenging project and highlight a moment where
+              their leadership stood out.
+            </CardContent>
+          </Card>
 
-        <Card className="max-w-md">
-          <CardHeader>
-            <CardTitle>Card Example</CardTitle>
-          </CardHeader>
-          <CardContent>A simple card with header and content.</CardContent>
-        </Card>
+          {/* ORIGINAL EMAIL */}
+          <Card className="bg-email-mint max-w-xl overflow-y-auto rounded-none">
+            <CardHeader className="pl-3 pt-2">
+              <CardTitle>Original email:</CardTitle>
+            </CardHeader>
+            <ScrollArea className="font-style: h-64 p-3 text-sm ">
+              Original email content goes here...
+            </ScrollArea>
+          </Card>
+
+          {/* WORD & TIME LIMIT */}
+          <Card className="max-w-xl rounded-none">
+            <div className="flex flex-row justify-end">
+              <CardContent className="pb-3 pl-3 pr-4 pt-2 text-sm font-bold">
+                Word Limit:
+              </CardContent>
+              <CardContent className="pb-3 pl-3 pr-12 pt-2 text-sm font-bold">
+                Timer:
+              </CardContent>
+            </div>
+          </Card>
+          <p>
+            * Word Limit and Timer can be replaced with graphics in
+            public/assets/images
+          </p>
+
+          {/* EMAIL ACTION BUTTON */}
+          <Card className="h-16 max-w-xl rounded-none">
+            <div className="flex h-full flex-row items-center justify-end">
+              <CardContent className="pr-6 pt-2 text-sm font-bold">
+                [Action Button here]
+              </CardContent>
+            </div>
+          </Card>
+
+          {/* AI REVIEW */}
+          <Card className="bg-email-charcoal text-email-white h-96 max-w-md overflow-y-auto rounded-none">
+            <CardHeader className="justify-center pl-3 pt-4 font-serif text-lg">
+              <CardTitle>Here&apos;s your review,</CardTitle>
+            </CardHeader>
+            <ScrollArea className="text-md h-80 p-3 px-6 font-serif">
+              AI review goes here...
+            </ScrollArea>
+          </Card>
+
+          {/* SAVED EMAILS */}
+          <Card className="bg-email-charcoal text-email-white h-96 max-w-md overflow-y-auto rounded-none">
+            <CardHeader className="justify-center pl-3 pt-4 font-serif text-lg">
+              <CardTitle>Here&apos;s your review,</CardTitle>
+            </CardHeader>
+            <ScrollArea className="text-md h-80 p-3 px-6 font-serif">
+              AI review goes here...
+            </ScrollArea>
+          </Card>
+        </div>
       </section>
 
       <Separator />
