@@ -30,7 +30,7 @@ import { Form } from '@/components/ui/form'
 
 export default function ComponentPlayground() {
   return (
-    <div className="space-y-12 p-8">
+    <div className="bg-email-grey space-y-12 p-8">
       {/* TAILWIND NOTES
         - rounded-xl for rounded corners
         - hover:underline for underline highlight of link
@@ -38,6 +38,7 @@ export default function ComponentPlayground() {
         - hover:bg ... /80 sets opacity of 80% for bg when hovering over button
         - grid sets container as grid
         - sm:grid-cols-2 / lg:grid-cols-3 means small screen 2 columns / large 3
+        - flex flex-col items-start stacks items as column and keeps to left side
       
       */}
 
@@ -149,10 +150,10 @@ export default function ComponentPlayground() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem className="hover:bg-email-charcoal/80 hover:text-email-white justify-end py-2 pl-5">
+              <DropdownMenuItem className="hover:bg-email-charcoal/80 hover:text-email-white bg-email-white justify-end py-2 pl-5">
                 View Profile
               </DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-email-charcoal/80 hover:text-email-white justify-end py-2 pl-5">
+              <DropdownMenuItem className="hover:bg-email-charcoal/80 hover:text-email-white bg-email-white justify-end py-2 pl-5">
                 Sign Out
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -192,7 +193,7 @@ export default function ComponentPlayground() {
           <div className="space-y-2">
             <Label>Choose an option</Label>
             <Select>
-              <SelectTrigger className="px-2">
+              <SelectTrigger className="bg-email-white px-2">
                 <SelectValue placeholder="Select…" />
               </SelectTrigger>
               <SelectContent>
@@ -267,7 +268,7 @@ export default function ComponentPlayground() {
         <h2 className="mb-4 font-serif text-2xl">Card</h2>
         <div className="space-y-6">
           {/* PROMPT */}
-          <Card className="max-w-xl">
+          <Card className="bg-email-white max-w-xl">
             <CardHeader className="pl-3 pt-2 font-serif">
               <CardTitle>Prompt:</CardTitle>
             </CardHeader>
@@ -289,7 +290,7 @@ export default function ComponentPlayground() {
           </Card>
 
           {/* WORD & TIME LIMIT */}
-          <Card className="max-w-xl rounded-none">
+          <Card className="bg-email-white max-w-xl rounded-none">
             <div className="flex flex-row justify-end">
               <CardContent className="pb-3 pl-3 pr-4 pt-2 text-sm font-bold">
                 Word Limit:
@@ -304,8 +305,17 @@ export default function ComponentPlayground() {
             public/assets/images
           </p>
 
+          {/* PROFILE HEADER */}
+          <Card className="bg-email-white max-w-xl rounded-none">
+            <div className="flex flex-row justify-center">
+              <CardContent className="text-md pb-3 pl-3 pr-4 pt-2 font-bold">
+                Your Details
+              </CardContent>
+            </div>
+          </Card>
+
           {/* EMAIL ACTION BUTTON */}
-          <Card className="h-16 max-w-xl rounded-none">
+          <Card className="bg-email-white h-16 max-w-xl rounded-none">
             <div className="flex h-full flex-row items-center justify-end">
               <CardContent className="pr-6 pt-2 text-sm font-bold">
                 [Action Button here]
@@ -324,13 +334,20 @@ export default function ComponentPlayground() {
           </Card>
 
           {/* SAVED EMAILS */}
-          <Card className="bg-email-charcoal text-email-white h-96 max-w-md overflow-y-auto rounded-none">
-            <CardHeader className="justify-center pl-3 pt-4 font-serif text-lg">
-              <CardTitle>Here&apos;s your review,</CardTitle>
+          <Card className="bg-email-white text-email-charcoal h-96 max-w-md overflow-y-auto rounded-none">
+            <CardHeader className="py-6 pl-3 text-center text-lg font-bold">
+              <CardTitle>SAVED EMAILS</CardTitle>
             </CardHeader>
-            <ScrollArea className="text-md h-80 p-3 px-6 font-serif">
-              AI review goes here...
-            </ScrollArea>
+            <div className="w-full">
+              <Button className="bg-email-blue border-email-charcoal/10 hover:border-email-charcoal/50 flex w-full flex-col items-start space-y-2 border-b px-3 py-3 text-sm hover:border">
+                <p className="font-bold">15/11/25</p>
+                <p>First few words of email here ...</p>
+              </Button>
+              <Button className="bg-email-gold hover:border-email-charcoal/50 border-email-charcoal/10 flex w-full flex-col items-start space-y-2 border-b px-3 py-3 text-sm hover:border">
+                <p className="font-bold">12/11/25</p>
+                <p>First few words of email here ...</p>
+              </Button>
+            </div>
           </Card>
         </div>
       </section>
@@ -353,37 +370,6 @@ export default function ComponentPlayground() {
           <TabsContent value="one">Content for tab one</TabsContent>
           <TabsContent value="two">Content for tab two</TabsContent>
         </Tabs>
-      </section>
-
-      <Separator />
-
-      {/* ------------------------------------- */}
-      {/* SCROLL AREA */}
-      {/* ------------------------------------- */}
-
-      <section>
-        <h2 className="mb-4 font-serif text-2xl">Scroll Area</h2>
-
-        <ScrollArea className="h-32 w-64 border p-4">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros
-            lorem, lacinia at est non, tempus fermentum urna. Vestibulum feugiat
-            dolor magna, non dignissim libero lacinia id. Phasellus porttitor mi
-            nec nisi gravida, at viverra leo laoreet.
-          </p>
-        </ScrollArea>
-      </section>
-
-      <Separator />
-
-      {/* ------------------------------------- */}
-      {/* BADGE */}
-      {/* ------------------------------------- */}
-
-      <section>
-        <h2 className="mb-4 font-serif text-2xl">Badge</h2>
-
-        <Badge>Badge</Badge>
       </section>
     </div>
   )
